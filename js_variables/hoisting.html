@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Function Example</title>
+    <script>
+        // This script will execute when the HTML document is loaded.
+        function init() {
+            test(10); // This will execute correctly due to hoisting
+        }
+
+        function test(num) {
+            console.log(num);
+        }
+    </script>
+</head>
+<body onload="init()">
+    <h1>JavaScript Function Example</h1>
+    <p>This page will execute a JavaScript function and log the output to the console.</p>
+</body>
+</html>

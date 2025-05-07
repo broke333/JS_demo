@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relational Operators</title>
+</head>
+<body>
+  <script>
+    const a = 10, b = 5, c = "10", number = 15, min = 10, max = 20;
+
+    console.log(a > b, a < b, a >= b, a <= b); // true false true false
+    console.log(a == c, a === c, a != c, a !== c); // true false false true
+
+    console.log(
+      number >= min && number <= max 
+        ? `${number} is in range.` 
+        : `${number} is out of range.`
+    );
+  </script>
+</body>
+</html>

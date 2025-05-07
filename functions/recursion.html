@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibonacci Calculator</title>
+</head>
+<body>
+  <h1>Fibonacci Calculator</h1>
+  <p>Enter a number:</p>
+  <input type="number" id="numberInput" />
+  <button onclick="showFibonacci()">Calculate</button>
+  <p id="output"></p>
+
+  <script>
+    function fibonacci(n) {
+      if (n === 0) return 0; // Base case
+      if (n === 1) return 1; // Base case
+      return fibonacci(n - 1) + fibonacci(n - 2); // Recursive case
+    }
+
+    function showFibonacci() {
+      const num = parseInt(document.getElementById('numberInput').value, 10);
+      const result = fibonacci(num);
+      document.getElementById('output').innerText = `Fibonacci(${num}) = ${result}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logical Operators in JavaScript</title>
+</head>
+<body>
+  <h2>Logical Operators Example</h2>
+  <p>Open the console to see the output!</p>
+
+  <script>
+    const age = 25;
+    const hasID = true;
+
+    // AND operator (&&)
+    if (age >= 18 && hasID) {
+      console.log("You are allowed to enter."); // Both conditions are true
+    } else {
+      console.log("Access denied.");
+    }
+
+    // OR operator (||)
+    const isMember = false;
+    if (age >= 18 || isMember) {
+      console.log("You qualify for the offer."); // At least one condition is true
+    }
+
+    // NOT operator (!)
+    const isBlocked = false;
+    if (!isBlocked) {
+      console.log("Access granted."); // Negates the false value to true
+    }
+  </script>
+</body>
+</html>

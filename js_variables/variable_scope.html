@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Scope</h2>
+
+<p>A GLOBAL variable can be accessed from any script or function.</p>
+
+<p id="demo"></p>
+
+<script>
+    //global scope
+let carName = "Volvo";
+myFunction();
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "I can display " + carName;
+}
+// document.getElementById("demo1").innerHTML = "I can not display " + window.carName;-- with var it gives result and with let it shows undefined 
+
+
+// functional scope 
+// myFunction();
+
+// function myFunction() {
+//   let carName = "Volvo";
+//   document.getElementById("demo1").innerHTML = typeof carName + " " + carName;
+// }
+
+// document.getElementById("demo2").innerHTML = typeof carName;
+</script>
+
+</body>
+</html>

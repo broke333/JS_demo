@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detached Nodes & Event Listeners</title>
+</head>
+<body>
+  <button id="create-div">Create & Remove Div</button>
+  <button id="click-me">Click Me</button>
+
+  <script>
+    // Detached DOM Node Example
+    let detachedDiv;
+    document.getElementById('create-div').addEventListener('click', () => {
+      detachedDiv = document.createElement('div');
+      document.body.appendChild(detachedDiv);
+      document.body.removeChild(detachedDiv);
+      console.log('Detached Div:', detachedDiv);
+    });
+
+    //Uncleared Event Listener Example
+    const button = document.getElementById('click-me');
+    const handleClick = () => console.log('Button Clicked');
+    button.addEventListener('click', handleClick);
+
+    // Remove the event listener after 5 seconds
+    setTimeout(() => button.removeEventListener('click', handleClick), 5000);
+  </script>
+</body>
+</html>

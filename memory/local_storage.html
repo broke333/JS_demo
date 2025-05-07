@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LocalStorage Simplified</title>
+  </head>
+  <body>
+    <h1>LocalStorage Demo</h1>
+
+    <!-- Input fields for entering key and value -->
+    <input id="key" placeholder="Key" />
+    <input id="value" placeholder="Value" />
+
+    <!-- Buttons for performing LocalStorage operations -->
+    <button id="save">Save</button>
+    <button id="retrieve">Retrieve</button>
+    <button id="remove">Remove</button>
+    <button id="clear">Clear</button>
+
+    <!-- Output paragraph to display feedback messages -->
+    <p id="output"></p>
+
+    <script>
+        const $=id=getElementById(id);
+
+        const actions = {
+            save:()=>{
+                const key=$('key').value;
+                const value=$('value').value;
+                localStorage.setItem(key,value);
+                $('output').textContent=`Date Saved!`;
+            },
+
+            retrieve:()=>{
+                const key=$('key').value;
+                const value=localStorage.getItem(key);
+                $('output').textContent=value
+                ? `Value: ${value}` // Display the value if found
+                : 'No data found!';
+        },
+
+        // Remove specific key-value pair from LocalStorage
+      remove: () => {
+        const key = $('key').value; // Get the key from the input field
+        localStorage.removeItem(key); // Remove the key-value pair
+        $('output').textContent = 'Data removed!'; // Display confirmation message
+      },
+
+      // Clear all data in LocalStorage
+      clear: () => {
+        localStorage.clear(); // Remove all key-value pairs from LocalStorage
+        $('output').textContent = 'All data cleared!'; // Display confirmation message
+      }
+    };
+
+    // Attach event listeners to buttons dynamically
+    // This loop associates each button's ID with the corresponding function in the `actions` object
+    ['save', 'retrieve', 'remove', 'clear'].forEach(action =>
+      $(action).addEventListener('click', actions[action])
+    );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript WeakMaps</h2>
+
+<p id="demo"></p>
+
+<script>
+const m = new WeakMap(); // Properly declare a WeakMap
+
+const obj1 = {}; // Declare key objects
+const obj2 = {};
+
+m.set(obj1, "object 1"); // Set key-value pairs
+m.set(obj2, "object 2");
+
+m.delete(obj2); // Remove obj2 from the WeakMap
+
+// Use .has() and .get() to interact with WeakMap
+console.log(m.has(obj1)); // Output: true
+console.log(m.get(obj1)); // Output: "object 1"
+console.log(m.has(obj2)); // Output: false
+</script>
+
+</body>
+</html>
