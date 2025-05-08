@@ -18,6 +18,7 @@
   <script>
     // Function to display a greeting message
     function greetUser() {
+      // debugger; // Debugger statement to pause execution
       // Get the name from the input field
       const name = document.getElementById('name').value;
 
@@ -27,7 +28,6 @@
       // Display the greeting
       document.getElementById('message').textContent = greeting;
     }
-
     // Function with a parameter
     function generateGreeting(userName) {
       return userName ? `Hello, ${userName}! Welcome!` : "Hello, Guest! Please enter your name.";
